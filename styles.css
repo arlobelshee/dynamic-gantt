@@ -1,0 +1,27 @@
+:root {
+	--near-white: #f0f0f0;
+	--light-gray: #ccc;
+	--ice-blue: #bfbfeb;
+
+	--c-background: var(--near-white);
+	--c-bg-text: var(--light-gray);
+	--c-bg-borders: var(--light-gray);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#chart {
+	position: relative;
+	width: 100vw;
+	min-height: 100vh;
+	margin: 0;
+	background-color: var(--c-background);
+	color: var(--c-bg-text);
+}
+
+body, html {
+	margin: 0;
+	padding: 0;
+}
