@@ -1,15 +1,18 @@
 {
-  "name": "dynamic-gantt",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "npx vite",
-    "build": "npx tsc && npx vite build",
-    "preview": "npx vite preview"
-  },
-  "devDependencies": {
-    "typescript": "^4.6.4",
-    "vite": "^3.0.0"
-  }
+	"name": "dynamic-gantt",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"dev": "npx vite",
+		"dev:test": "npx vitest watch",
+		"build": "npx tsc && npx vite build",
+		"preview": "npx vite preview",
+		"test": "npx vitest"
+	},
+	"devDependencies": {
+		"typescript": "^4.6.4",
+		"vite": "^3.0.0",
+		"vitest": "^0.18.1"
+	}
 }
