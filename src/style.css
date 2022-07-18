@@ -1,18 +1,56 @@
 :root {
+	--near-white: #f0f0f0;
+	--light-gray: #ccc;
+	--ice-blue: #bfbfeb;
+
+	--c-background: var(--near-white);
+	--c-bg-text: var(--light-gray);
+	--c-bg-borders: var(--light-gray);
+	--c-tool-background: var(--near-white);
+	--c-tool-text: var(--light-gray);
+	--c-tool-borders: var(--light-gray);
+}
+
+:root {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.chart {
+	position: relative;
+	overflow: scroll;
+	min-height: 100%;
+	min-width: 100%;
+	background-color: var(--c-background);
+	color: var(--c-bg-text);
+	border-color: var(--c-bg-borders);
+}
+
+.chart .connectors {
+	z-index: 1;
+	height: 100%;
+	width: 100%;
+	background-color: var(--c-background);
+}
+
+.chart .tools {
+	display: flex;
+	flex-direction: row-reverse nowrap;
+	z-index: 1000;
+	position: absolute;
+	top: 2em;
+	right: 2em;
+	color: var(--c-tool-text);
 }
 
 a {
@@ -26,10 +64,7 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+	padding: 0;
 }
 
 h1 {
@@ -38,40 +73,22 @@ h1 {
 }
 
 #app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+	width: 100vw;
+	height: 100vh;
 }
 
 .card {
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid var(--c-tool-borders);
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--c-tool-background);
   cursor: pointer;
   transition: border-color 0.25s;
 }

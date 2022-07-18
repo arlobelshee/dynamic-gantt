@@ -1,23 +1,15 @@
 import './style.css'
-import typescriptLogo from './typescript.svg'
-import { setupCounter } from './counter'
+import { State } from './state'
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+const state = new State();
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
+	<div class="chart"><canvas class="connectors"></canvas>
+	<div class="tools"><button class="openFile">Open</button><button class="saveFile">Save</button></div>
+	</div>
+`;
+
+document
+	.querySelector<HTMLButtonElement>(".openFile")
+	?.addEventListener("click", state.openFile);
+document.querySelector<HTMLButtonElement>('.saveFile')?.addEventListener('click', state.saveFile);
